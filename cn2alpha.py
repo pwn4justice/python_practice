@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# to convert chinese name to Pinying version
+# to convert chinese name to Pinyin version
 # author: pwn4justice
 # date: 2019/7/18
 # 待改进：1.转换后文本去重功能 2.添加 -o,指定输出文件
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     if '-f' in sys.argv:
         index = sys.argv.index('-f')        #-f: 指定从哪个文件解析
         origin = sys.argv[index+1]
-        filename = "pinying.txt"
+        filename = "pinyin.txt"
         #start parsing...
         print("[*] Parsing from origin file: %s..." % origin)
         with open(origin, 'r') as f:
@@ -137,7 +137,7 @@ if __name__ == "__main__":
         print("[*] Process End!")         
     elif len(sys.argv) == 1:
         origin = "names500.txt"
-        filename = "pinying.txt"
+        filename = "pinyin.txt"
         #start parsing...
         print("[*] Parsing defaule file: \'names500.txt\' ...")
         with open(origin, 'r') as f:
