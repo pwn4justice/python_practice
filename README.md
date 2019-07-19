@@ -8,7 +8,9 @@ Something I wrote when I was learning Python.
     > Usage: curl "[www.]site.com"
 
 - cn2alpha.py --- a small tool to convert the most common chinese names to pinyin.
-    > Usage: 
-    > cn2alpha.py -f cn_names.txt
-    > cn2alpha.py "A chinese Name Here"
-    > cn2alpha.py
+     ```
+     Usage: 
+     cn2alpha.py -f cn_names.txt
+     cn2alpha.py "A chinese Name Here"
+     cn2alpha.py
+     ```
