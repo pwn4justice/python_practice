@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 # to convert chinese name to Pinying version
 # author: pwn4justice
-# date: 20","9/7/","8
+# date: 2019/7/18
 # 待改进：1.转换后文本去重功能 2.添加 -o,指定输出文件
 
 import sys
