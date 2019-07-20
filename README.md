@@ -1,13 +1,15 @@
 ## Python small tools
 Something I wrote when I was learning Python.
 ### List
-#### curl.py 
+#### 1.curl.py 
 a tiny curl tool in windows.
 ​```shell
-Usage: curl "[www.]site.com"
+Usage: 
+	curl "[www.]site.com"
 ```
 
-#### cn2alpha.py
+
+#### 2.cn2alpha.py
 a small tool to convert the most common chinese names to pinyin.
 ```shell
 Usage: 
@@ -16,7 +18,8 @@ Usage:
 	cn2alpha.py
 ```
 
--- wget.py --- a small tool to simulate 'wget' in Windows
+
+#### 3.wget.py --- a small tool to simulate 'wget' in Windows
 ```shell
 usage: wget.py -u 'site' [options]
 options:
