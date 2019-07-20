@@ -6,15 +6,15 @@ Python small tools
 ---------
 :a tiny curl tool in windows.
 Usage: 
-	curl "[www.]site.com"
+               curl "[www.]site.com"
 
 2.cn2alpha.py
 -------------
 :a small tool to convert the most common chinese names to pinyin.
 Usage: 
-	cn2alpha.py -f cn_names.txt
-	cn2alpha.py "A chinese Name Here"
-	cn2alpha.py
+               cn2alpha.py -f cn_names.txt
+               cn2alpha.py "A chinese Name Here"
+               cn2alpha.py
 
 3.wget.py
 ---------
