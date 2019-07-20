@@ -1,7 +1,9 @@
-# python_practice
+python_practice
+=\=\=\=\=\=
 Something I wrote when I was learning Python.
 
-### List
+List
+=\=\=\=\=\=
 
 - curl.py --- a tiny curl tool in windows.
 
@@ -14,3 +16,12 @@ Something I wrote when I was learning Python.
      cn2alpha.py "A chinese Name Here"
      cn2alpha.py
      ```
+
+- wget.py --- a small tool to simulate 'wget' in Windows
+	```
+	usage: wget.py -u 'site' [options]
+	options:
+                 -h, --help              show this page.
+                 -u, --url               must follow an url.
+                 -i                      using username and password.
+	```
