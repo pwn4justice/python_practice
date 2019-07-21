@@ -1,15 +1,14 @@
+# 
 # -*- encoding: utf-8 -*-
-# name:     wget.py - a small tool to simulate 'wget' in Windows
-# author:   pwn4justice
-# 待改进：  请求局域网 python -m http.server 时工作正常，请求网络IP
-#           或者网站（如：baidu.com）则会 404,估计是没有完善的请求头
-#           信息所以被拒绝；还有 ftp 功能没有完善；账号密码验证功能
-#           等，注意有时间改进一下
+# wget.py - a small tool to mock 'wget' in windows
+# author : pwn4justice
+# 
 
 import sys
 import getopt
 import socket
 import re
+import time
 from urllib import parse
 
 def isWebsite(host):
@@ -32,7 +31,6 @@ def retrieveData(url, username=None, password=None):
     host = url.netloc
     port = 80
     resource = '/'
-
 
     if re.match(".*?:[0-9]+", url.netloc):
         host = url.netloc.split(':')[0]
@@ -65,20 +63,40 @@ def retrieveData(url, username=None, password=None):
     msg = bytes(msg, encoding='utf-8')
     s.send(msg)
     buffer = s.recv(1024)
-    print("[*] Header: " + buffer.decode().strip())
-    print("[*] Downloading Process: ", end="")
+    print("[*] Header: \n" + buffer.decode().strip())
+        
+    # get Content-Length:
+    content_length = re.findall("Content-Length:\s(.*?)\s\s", buffer.decode().strip(), re.M)[0]
+    content_length = int(content_length)
+    contentMB = content_length / 1024 / 1024
+    print("[*] Size: %.2f MB" % contentMB)
 
+    # record downloaded size
+    size = 0
+    blocks = content_length/50
+    k = int( blocks - 1024 * ( blocks // 1024) )
+
+    ## time start 
+    start = time.time()
     while True:
         buffer = s.recv(1024)
+        
+        ## show download bar
+        size += len(buffer)
+        print('\r' + "[*] Downloading Process: %s%.2f%%" % ('>' * (size * 50 // content_length), size / content_length * 100), end='')
+        
         if not buffer:
             break
         if resource == '/':
             resource = "index.html"
-        print("*", end="")
 
-        #if isWebsite, then may use 'w' only??
         with open(resource, 'ab') as f:
             f.write(buffer)
+    
+    ## time end
+    end = time.time()
+    print("\n[*] Download Complete! ")
+    print("[*] Cost: %.2fs ; Save to: %s - %.2f MB" % ( end-start, resource, contentMB))
     print("")
     s.close()
 
@@ -99,7 +117,6 @@ if __name__ == "__main__":
 
     for o, v in opts:
         if o in ('-h', '--help'):
- 
             usage()
             sys.exit(-1)
         elif o in ('-i', ):
@@ -107,7 +124,6 @@ if __name__ == "__main__":
                 username = input("username: ")
                 password = input("password: ")
         elif o in ('-u', '--url'):
-  
             url_set = True
             url = v 
         else:
@@ -127,7 +143,6 @@ if __name__ == "__main__":
     #if url is not an ip address, it will return 'bad request - 404'
     #so when using this tool to wget a website, should constuct a more
     #complicated request HEADER!!!
-
     if username and password:
         retrieveData(url, username=username, password=password)
     else:

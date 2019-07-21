@@ -27,3 +27,22 @@ options:
                -h, --help              show this page.
                -u, --url               must provide an url.
                -i                      using username and password.
+e.g.
+In Mac(or a Virtual Machine):
+$ python -m http.server
+
+In PC:
+C:> wget.py -u "192.168.199.133:8000/file.jpg"
+[*] Start to download ...
+[*] Header:
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.6.3
+Date: Sun, 21 Jul 2019 06:27:51 GMT
+Content-type: image/jpeg
+Content-Length: 80248
+Last-Modified: Sun, 21 Jul 2019 06:27:05 GMT
+[*] Size: 0.08 MB
+[*] Downloading Process: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>100.00%
+[*] Download Complete!
+[*] Cost: 0.15s ; Save to: file.jpg - 0.08 MB
+
