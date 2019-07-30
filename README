@@ -50,11 +50,17 @@ Last-Modified: Sun, 21 Jul 2019 06:27:05 GMT
 4.tree.py
 ---------
 :a small tool to list of directories in a tree-like format.
-usage: tree.py -L level [-ad] [-o filename]
-options:
-               -L level             	Descend only level directories deep.
-               -a		               	All files are listed.
-               -d                      	List directories only.
-			   -o filename				Output to file instead of stdout.
+Usage: tree [-L level] [-ad] [-o filename] [-p path]
+
+------ Listing options ------
+-a                       All files are listed.
+-d                       List directories only.
+-L level                 Descend only level directories deep.
+-o filename              Output to file instead of stdout.
+-p path                  Specify a directory to list.
 e.g.
-C:> tree.py -L 2 -d
+        tree.py -L 2 -a
+        tree -d
+        tree.py -L 2 -d -o a.txt
+        tree.py -L 1 -d -o a.txt -p C:\\
+        tree.py -L 1 -a -o D:\\a.txt -p C:\\
