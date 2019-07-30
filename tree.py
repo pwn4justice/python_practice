@@ -189,10 +189,13 @@ def main(path = '.'):
     if filename != "":
         dump(filename, path, level = 0)
         #
-        print("Write to %s Success." % filename)
+        print("[*] Write to %s Success." % filename)
     else:
         # 打印工作的目录
-        print("*** PATH: %s ***" % path)
+        print()
+        print("*" * 20)
+        print("** CURRENT PATH: %s" % path)
+        print("*" * 20)
         print()
         print_dir(path, level = 0)
 
