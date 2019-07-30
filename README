@@ -7,16 +7,16 @@ Python small tools
 ---------
 :a tiny curl tool in windows.
 Usage: 
-               curl "[www.]site.com"
+	curl "[www.]site.com"
 
 
 2.cn2alpha.py
 -------------
 :a small tool to convert the most common chinese names to pinyin.
 Usage: 
-               cn2alpha.py -f cn_names.txt
-               cn2alpha.py "张伟"
-               cn2alpha.py
+	cn2alpha.py -f cn_names.txt
+	cn2alpha.py "张伟"
+	cn2alpha.py
 
 
 3.wget.py
@@ -24,9 +24,9 @@ Usage:
 :a small tool to simulate 'wget' in Windows
 usage: wget.py -u 'site' [options]
 options:
-               -h, --help              show this page.
-               -u, --url               must provide an url.
-               -i                      using username and password.
+	-h, --help              show this page.
+	-u, --url               must provide an url.
+	-i                      using username and password.
 e.g.
 In Mac(or a Virtual Machine):
 $ python -m http.server
