@@ -46,3 +46,15 @@ Last-Modified: Sun, 21 Jul 2019 06:27:05 GMT
 [*] Download Complete!
 [*] Cost: 0.15s ; Save to: file.jpg - 0.08 MB
 
+
+4.tree.py
+---------
+:a small tool to list of directories in a tree-like format.
+usage: tree.py -L level [-ad] [-o filename]
+options:
+               -L level             	Descend only level directories deep.
+               -a		               	All files are listed.
+               -d                      	List directories only.
+			   -o filename				Output to file instead of stdout.
+e.g.
+C:> tree.py -L 2 -d

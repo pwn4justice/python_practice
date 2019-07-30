@@ -24,6 +24,11 @@ def usage():
     print("-d \t\t\t List directories only.")
     print("-L level \t\t Descend only level directories deep.")
     print("-o filename \t\t Output to file instead of stdout.")
+    
+    print("e.g.")
+    print("\ttree.py -L 2 -a")
+    print("\ttree -d")
+    print("\ttree.py -L 2 -d -o a.txt")
 
 
 def print_dir(path, level):
